@@ -41,18 +41,8 @@ elif mode == "Image Captioning":
         st.success(f"🖼️ Caption/Interpretation: {caption}")
 
 elif mode == "Image Question Answering":
-    uploaded_img = st.file_uploader("Upload a diagram", type=["jpg", "png", "jpeg"])
-    question = st.text_input("Ask a question based on the diagram:")
+    st.warning("Image Question Answering module is not yet implemented.")
 
-    if uploaded_img and question:
-        image = Image.open(uploaded_img).convert("RGB")
-        st.image(image, caption="Uploaded Diagram", use_container_width=True)
-
-        with st.spinner("Analyzing image and generating answer..."):
-            context = get_image_description(image)
-            answer = ask_gemini(question, context)
-
-        st.success(f"📘 Answer: {answer}")
 
 elif mode == "Engagement Detection":
     st.warning("Engagement detection module is not yet implemented.")
